@@ -1,14 +1,14 @@
 # Arch install steps for simple quick VM
 ### Check disks
 
-``` bash
+```
 lsblk
 fdisk -l
 ```
 
 ### Partition
 
-``` bash
+```
 fdisk
 ```
 
@@ -17,7 +17,7 @@ fdisk
 
 ### Format
 
-``` bash
+```
 mkfs.fat -F32 $P1_PATH
 mkfs.ext4 $P2_PATH
 ```
