@@ -89,11 +89,18 @@ passwd $NEW_USER_NAME
 ```
 
 ### Install packages
+## Ethernet
+```
+pacman -S dhcpcd
+```
+
+## Wifi
 
 ```
 pacman -S iwd
 ```
 > Config iwd to use DHCP
+> > not needed if using ethernet
 ```
 # /etc/iwd/main.conf
 [General]
