@@ -103,6 +103,14 @@ pacman -S iwd
 systemctl enable iwd
 ```
 
+### Other
+
+```
+pacman -S vi sudo
+visudo
+# uncomment wheel group
+```
+
 ## Reboot
 > Backout of chrooted env
 ```
