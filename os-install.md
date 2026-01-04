@@ -106,7 +106,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo curl less
+pacman -S vi sudo curl less jq
 visudo
 # uncomment wheel group
 ```
