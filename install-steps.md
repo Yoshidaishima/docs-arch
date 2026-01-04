@@ -58,6 +58,8 @@ echo $NEW_HOST_NAME >> /etc/hostname
 ```
 
 ### Gen initial RAM disk
+> Pacstrap should have already executed this step
+> :. likely not needed
 
 ```
 mkinitcpio -P
@@ -84,6 +86,25 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 useradd -m -G wheel $NEW_USER_NAME
 passwd $NEW_USER_NAME
+```
+
+### Install packages
+
+```
+pacman -S iwd
+```
+> Config iwd to use DHCP
+```
+# /etc/iwd/main.conf
+[General]
+EnableNetworkConfiguration=true
+
+[Network]
+NameResolvingService=systemd
+```
+> Enable iwd
+```
+systemctl enable iwd
 ```
 
 ### Reboot
