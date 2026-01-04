@@ -18,15 +18,15 @@ fdisk
 ### Format
 
 ```
-mkfs.fat -F32 $P1_PATH
-mkfs.ext4 $P2_PATH
+mkfs.fat -F32 $EFI_PARTITON
+mkfs.ext4 $ROOT_PARTITION
 ```
 
 ### Mount partitions
 
 ```
-mount $P1_PATH /mnt
-mount -m $P2_PATH /mnt/efi
+mount $ROOT_PARTITION /mnt
+mount -m $EFI_PARTITON /mnt/efi
 ```
 
 ### Strap
@@ -45,5 +45,44 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 arch-chroot /mnt
+```
+
+### Set locale and hostname
+
+```
+sed -r -i 's/#(en_US.UTF-8)/\1/' /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+echo $NEW_HOST_NAME >> /etc/hostname
+```
+
+### Gen initial RAM disk
+
+```
+mkinitcpio -P
+# on /etc/vconsole.conf error
+touch /etc/vconsole.conf
+```
+
+### Set root pass
+
+```
+passwd
+```
+
+### Bootloader
+
+```
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Create user
+
+```
+useradd -m -G wheel $NEW_USER_NAME
+passwd $NEW_USER_NAME
 ```
 
