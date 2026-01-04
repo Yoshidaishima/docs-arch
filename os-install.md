@@ -106,7 +106,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo
+pacman -S vi sudo curl
 visudo
 # uncomment wheel group
 ```
