@@ -1,6 +1,5 @@
 # Create custom bootable arch iso
-> Use case:
->> Installing arch on wifi only systems with proprietary drivers
+> Use case: Installing arch on wifi only systems with proprietary drivers
 
 ```
 sudo pacman -S archiso
