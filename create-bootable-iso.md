@@ -13,3 +13,4 @@ sudo mkarchiso -v ~/custom-archiso
 # Flash to usb
 sudo dd bs=4M if=$ARCH_ISO_PATH of=$USB_DEV_PATH status=progress oflag=sync
 ```
+> If flashing fails in vm, transfer to host and use dd ( some hypervisors cant flash to usb reliably )
