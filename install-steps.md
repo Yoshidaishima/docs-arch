@@ -1,4 +1,5 @@
 # Arch install steps for simple quick VM
+## System setup
 ### Check disks
 
 ```
@@ -88,33 +89,21 @@ useradd -m -G wheel $NEW_USER_NAME
 passwd $NEW_USER_NAME
 ```
 
-### Install packages
-## Ethernet
+## Install packages
+### Ethernet
 ```
 pacman -S dhcpcd
+systemctl enable dhcpcd
 ```
 
-## Wifi
+### Wifi
 
 ```
 pacman -S iwd
-```
-> Config iwd to use DHCP
-> > not needed if using ethernet
-```
-# /etc/iwd/main.conf
-[General]
-EnableNetworkConfiguration=true
-
-[Network]
-NameResolvingService=systemd
-```
-> Enable iwd
-```
 systemctl enable iwd
 ```
 
-### Reboot
+## Reboot
 > Backout of chrooted env
 ```
 umount /mnt/efi
