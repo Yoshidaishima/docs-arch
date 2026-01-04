@@ -86,3 +86,10 @@ useradd -m -G wheel $NEW_USER_NAME
 passwd $NEW_USER_NAME
 ```
 
+### Reboot
+> Backout of chrooted env
+```
+umount /mnt/efi
+umount /mnt
+reboot now
+```
