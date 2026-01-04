@@ -12,5 +12,5 @@ fdisk -l
 fdisk
 ```
 
-> partition 1 = 512M for efi
+> partition 1 = 512M for efi  
 > partition 2 = Remaining drive as root
