@@ -14,3 +14,23 @@ sudo mkarchiso -v ~/custom-archiso
 sudo dd bs=4M if=$ARCH_ISO_PATH of=$USB_DEV_PATH status=progress oflag=sync
 ```
 > If flashing fails in vm, transfer to host and use dd ( some hypervisors cant flash to usb reliably )
+
+
+# Simpler options
+## Full arch on usb
+> boot from arch live usb
+> install arch to another usb
+> > this will be persistent, can install drivers
+## Copy over the packages and install from tar
+> download broadcom-wl-dkms (here) [https://archlinux.org/packages/extra/x86_64/broadcom-wl-dkms/]
+> download dependencies
+
+```
+pacman -Sy --downloadonly --cachedir ./ dkms
+pacman -Sy --downloadonly --cachedir ./ linux-headers
+```
+
+**Note**
+linux headers ```pacman -Q | grep linux-headers``` and kernel version ```uname -r``` must match exactly
+
+
