@@ -15,6 +15,13 @@ sudo dd bs=4M if=$ARCH_ISO_PATH of=$USB_DEV_PATH status=progress oflag=sync
 ```
 > If flashing fails in vm, transfer to host and use dd ( some hypervisors cant flash to usb reliably )
 
+### Issues
+DKMS is not supported in the arch install medium
+- broadcom-wl-dkms sets up dmks hooks
+- dkms requires
+  - fully installed kernel ( not complete in live usb )
+  - matching linux headers ( linux headers are not yet installed )
+  - persistent fs ( fs not persistent )
 
 # Simpler options
 ## Full arch on usb
