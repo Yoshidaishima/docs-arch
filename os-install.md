@@ -10,16 +10,21 @@ fdisk -l
 ### Partition
 
 ```
-fdisk
+fdisk /dev/$DEVICE
 ```
 
-> partition 1 = 512M for efi  
-> partition 2 = Remaining drive as root
+> partition 1 = 512M efi
+> partition 2 = 32G swap
+> partition 3 = root
+> partition 4 = home (for a personal machine, not required)
+
 
 ### Format
 
 ```
 mkfs.fat -F32 $EFI_PARTITON
+mkswap $SWAP_PARTITION
+swapon $SWAP_PARTITION
 mkfs.ext4 $ROOT_PARTITION
 ```
 
