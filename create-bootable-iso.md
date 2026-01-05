@@ -25,16 +25,15 @@ DKMS is not supported in the arch install medium
 
 # Simpler options
 ## Full arch on usb
-> boot from arch live usb
-> install arch to another usb
-> > this will be persistent, can install drivers
+- boot from arch live usb
+- install arch to another usb
+  - this will be persistent, can install drivers
 ## Copy over the packages and install from tar
-> download broadcom-wl-dkms (here) [https://archlinux.org/packages/extra/x86_64/broadcom-wl-dkms/]
-> download dependencies
+- download broadcom-wl-dkms (here) [https://archlinux.org/packages/extra/x86_64/broadcom-wl-dkms/]
+- download dependencies
 
 ```
 pacman -Sy --downloadonly --cachedir ./ dkms
-pacman -Sy --downloadonly --cachedir ./ linux-headers
 ```
 
 **Note**
