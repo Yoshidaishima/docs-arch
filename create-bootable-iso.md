@@ -35,10 +35,11 @@ DKMS is not supported in the arch install medium
   - this will be persistent, can install drivers
 ## Copy over the packages and install from tar
 - download broadcom-wl-dkms (here) [https://archlinux.org/packages/extra/x86_64/broadcom-wl-dkms/]
-- download dependencies
+- download dependencies (**Note** pacman uses non-privileged user for downloads :. dest dir needs to be accessable
 
 ```
-pacman -Sy --downloadonly --cachedir ./ dkms
+mkdir /tmp/downloads
+pacman -Sy --downloadonly --cachedir /tmp/downloads dkms
 ```
 
 **Note**
