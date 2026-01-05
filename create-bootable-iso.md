@@ -34,6 +34,7 @@ DKMS is not supported in the arch install medium
 - install arch to another usb
   - this will be persistent, can install drivers
 ## Copy over the packages and install from tar
+### Packages
 - download broadcom-wl-dkms (here) [https://archlinux.org/packages/extra/x86_64/broadcom-wl-dkms/]
 - download dependencies (**Note** pacman uses non-privileged user for downloads :. dest dir needs to be accessable
 
@@ -46,4 +47,10 @@ pacman -Sy --downloadonly --cachedir /tmp/downloads dkms
 
 linux headers ```pacman -Q | grep linux-headers``` and kernel version ```uname -r``` must match exactly
 
+### Install Paragon (Mac)
+- format usb to Ext4
+- transfer files
+**Note** could also partition a single usb drive to include the packages and the iso
 
+### Boot
+- boot the target machine with both the archiso usb and the packages usb inserted
