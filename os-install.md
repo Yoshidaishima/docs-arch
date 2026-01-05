@@ -118,3 +118,16 @@ umount /mnt/efi
 umount /mnt
 reboot now
 ```
+
+## Update mirrors
+```
+pacman -S reflector
+# backup old list
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+sudo reflector --list-countries
+sudo reflector --country "United Kingdom" \
+--protocol https \
+--age 12 --latest 20 \
+--sort rate \
+--save /etc/pacman.d/mirrorlist
+```
