@@ -31,6 +31,7 @@ pacman -Sy --downloadonly --cachedir ./ linux-headers
 ```
 
 **Note**
+
 linux headers ```pacman -Q | grep linux-headers``` and kernel version ```uname -r``` must match exactly
 
 
