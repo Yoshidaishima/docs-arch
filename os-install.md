@@ -125,7 +125,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo curl less jq ranger tmux git openssh
+pacman -S vi sudo curl less jq ranger tmux git openssh iwd
 systemctl enable sshd
 visudo
 # uncomment wheel group
