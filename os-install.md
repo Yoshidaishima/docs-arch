@@ -150,3 +150,31 @@ sudo reflector --country "United Kingdom" \
 --sort rate \
 --save /etc/pacman.d/mirrorlist
 ```
+
+## Mac Specific
+This relates specifically to legacy imac systems using proprietary broadcom drivers after a fresh arch install
+
+Download
+```
+pacman -S broadcom-wl-dkms
+```
+Install headers
+```
+sudo pacman -S $(pacman -Qsq "^linux" | grep "^linux[0-9]*[-rt]*$" | awk '{print $1"-headers"}' ORS=' ')
+```
+Remove conflicting modules
+```
+rmmod b43 b43legacy ssb bcm43xx brcm80211 brcmfmac brcmsmac bcma wl
+```
+Load wl
+```
+modprobe wl
+```
+Rebuild and install dkms module
+```
+dkms build -m broadcom-wl -v $VER -k $(uname -k) --force
+dkms install -m broadcom-wl -v $VER -k $(uname -k) --force
+```
+**Note** the version must match the downloaded broadcom-wl-dkms
+
+Confirm with ```pacman -Q broadcom-wl-dkms```
