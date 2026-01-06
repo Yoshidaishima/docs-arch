@@ -1,5 +1,17 @@
 # Arch install steps
 ## System setup
+
+### Pacman
+```
+pacman -Syu
+```
+May require boot param to increase working space
+- during systemd-boot screen press **e**
+- append the following to the params to increase the overlay to 1 Gig
+```
+cow_spacesize=1G
+```
+- continue to boot
 ### Check disks
 
 ```
@@ -111,7 +123,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo curl less jq ranger tmux
+pacman -S vi sudo curl less jq ranger tmux git
 visudo
 # uncomment wheel group
 ```
