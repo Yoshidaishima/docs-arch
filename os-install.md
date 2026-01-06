@@ -1,4 +1,4 @@
-# Arch install steps for simple quick VM
+# Arch install steps
 ## System setup
 ### Check disks
 
