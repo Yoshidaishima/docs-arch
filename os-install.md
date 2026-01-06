@@ -1,4 +1,6 @@
 # Arch install steps
+## Quicker setup
+Use archinstall command to bootstrap the system
 ## System setup
 
 ### Pacman
@@ -123,7 +125,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo curl less jq ranger tmux git
+pacman -S vi sudo curl less jq ranger tmux git openssh
 visudo
 # uncomment wheel group
 ```
