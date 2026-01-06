@@ -8,7 +8,7 @@ fdisk -l
 ```
 
 ### Partition
-
+gdisk needed for drives above 2TB
 ```
 fdisk /dev/$DEVICE
 ```
