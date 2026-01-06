@@ -111,7 +111,7 @@ systemctl enable iwd
 ### Other
 
 ```
-pacman -S vi sudo curl less jq ranger
+pacman -S vi sudo curl less jq ranger tmux
 visudo
 # uncomment wheel group
 ```
