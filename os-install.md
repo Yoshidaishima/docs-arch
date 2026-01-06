@@ -178,3 +178,5 @@ dkms install -m broadcom-wl -v $VER -k $(uname -k) --force
 **Note** the version must match the downloaded broadcom-wl-dkms
 
 Confirm with ```pacman -Q broadcom-wl-dkms```
+
+Reboot and check ```ip link```
