@@ -147,14 +147,6 @@ sudo reflector --country "United Kingdom" \
 ```
 
 ## Wifi setup
-To set up static ip
-```
-# /etc/iwd/main.conf
-[General]
-EnableNetworkConfiguration=true
-[Settings]
-AutoConnect=true
-```
 Connect
 ```
 iwctl
@@ -162,6 +154,22 @@ station list
 station $INTERFACE scan
 station $INTERFACE connect $SSID
 station $INTERFACE show
+```
+To set up static ip add to the following files
+```
+# /etc/iwd/main.conf
+[General]
+EnableNetworkConfiguration=true
+[Settings]
+AutoConnect=true
+
+# /var/lib/iwd/<SSID>
+[IPv4]
+Address=<Static IP>
+Netmask=<Netmask>
+Gateway=<Gateway>
+Broadcast=<Broadcast>
+DNS=<DNS>
 ```
 
 ## Mac Specific
