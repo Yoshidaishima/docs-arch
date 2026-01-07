@@ -111,22 +111,16 @@ passwd $NEW_USER_NAME
 ## Install packages
 ### Ethernet
 ```
-pacman -S dhcpcd
+pacman -S sudo openssh iwd dhcpcd git curl vi less jq ranger tmux
+```
+### Enable
+```
 systemctl enable dhcpcd
-```
-
-### Wifi
-
-```
-pacman -S iwd
 systemctl enable iwd
-```
-
-### Other
-
-```
-pacman -S vi sudo curl less jq ranger tmux git openssh iwd
 systemctl enable sshd
+```
+### Sudo setup
+```
 visudo
 # uncomment wheel group
 ```
