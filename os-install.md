@@ -178,7 +178,7 @@ Rebuild and install dkms module
 dkms build -m broadcom-wl -v $VER -k $(uname -k) --force
 dkms install -m broadcom-wl -v $VER -k $(uname -k) --force
 ```
-**Note** the version must match the downloaded broadcom-wl-dkms
+**Note** the version must match the downloaded broadcom-wl-dkms, check with ```pacman -Q broadcom-wl-dkms```
 
 Confirm with ```pacman -Q broadcom-wl-dkms```
 
