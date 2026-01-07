@@ -146,8 +146,26 @@ sudo reflector --country "United Kingdom" \
 --save /etc/pacman.d/mirrorlist
 ```
 
+## Wifi setup
+To set up static ip
+```
+# /etc/iwd/main.conf
+[General]
+EnableNetworkConfiguration=true
+[Settings]
+AutoConnect=true
+```
+Connect
+```
+iwctl
+station list
+station $INTERFACE scan
+station $INTERFACE connect $SSID
+station $INTERFACE show
+```
+
 ## Mac Specific
-This relates specifically to legacy imac systems using proprietary broadcom drivers after a fresh arch install
+This relates specifically to legacy apple hardware (circa 2013) using proprietary broadcom drivers after a fresh arch install
 
 Should be done after first boot
 
