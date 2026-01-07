@@ -149,6 +149,8 @@ sudo reflector --country "United Kingdom" \
 ## Mac Specific
 This relates specifically to legacy imac systems using proprietary broadcom drivers after a fresh arch install
 
+Should be done after first boot
+
 Download
 ```
 pacman -S broadcom-wl-dkms
@@ -164,6 +166,12 @@ rmmod b43 b43legacy ssb bcm43xx brcm80211 brcmfmac brcmsmac bcma wl
 Load wl
 ```
 modprobe wl
+```
+If modprobe fails, need to remove old dkms modules
+```
+# list modules
+dkms status
+dkms remove broadcom-wl/6.30.223.271 -k $MISSING_KERNEL
 ```
 Rebuild and install dkms module
 ```
