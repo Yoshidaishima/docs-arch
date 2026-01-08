@@ -210,10 +210,3 @@ Confirm with ```pacman -Q broadcom-wl-dkms```
 
 Reboot and check ```ip link```
 
-## KVM Setup
-
-Check system capabilities
-```
-lscpu | grep -i virtualization
-```
-
