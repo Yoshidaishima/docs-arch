@@ -176,6 +176,7 @@ DNS=<DNS>
 ```
 
 ## Mac Specific
+
 This relates specifically to legacy apple hardware (circa 2013) using proprietary broadcom drivers after a fresh arch install
 
 Should be done after first boot
@@ -212,6 +213,14 @@ dkms install -m broadcom-wl -v $VER -k $(uname -k) --force
 Confirm with ```pacman -Q broadcom-wl-dkms```
 
 Reboot and check ```ip link```
+
+May need to prioritize 2.4GHz band depending on physical machine locations
+```
+# /etc/iwd/main.conf
+[Rank]
+BandModifier5GHz=0.0
+BandModifier2_4GHz=1.0
+```
 
 # Further Setup
 Use ansible to further configure the remote hosts once the base system is installed and accessable through ssh
