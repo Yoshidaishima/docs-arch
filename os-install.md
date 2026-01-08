@@ -210,3 +210,7 @@ Confirm with ```pacman -Q broadcom-wl-dkms```
 
 Reboot and check ```ip link```
 
+# Further Setup
+Use ansible to further configure the remote hosts once the base system is installed and accessable through ssh
+
+Allows to replicable steps and reduces the odds of generating snowflakes
