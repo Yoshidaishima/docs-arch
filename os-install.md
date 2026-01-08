@@ -114,7 +114,7 @@ passwd $NEW_USER_NAME
 ## Install packages
 ### Ethernet
 ```
-pacman -S sudo openssh iwd dhcpcd git curl vi less jq ranger tmux
+pacman -S sudo openssh iwd dhcpcd git curl vi less jq ranger tmux rsync reflector
 ```
 ### Enable
 ```
