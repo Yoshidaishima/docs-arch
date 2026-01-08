@@ -1,6 +1,7 @@
 # Arch install steps
 ### Tips 
 - **Quicker setup** : Use archinstall command to bootstrap the system
+  - **Note** : Cannot fine tune partitioning and swap allocation
 - **Useful tools** : dpaste.com, allows copy paste to remote terminal based environments from host
 
 ## System setup
