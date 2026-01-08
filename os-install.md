@@ -1,6 +1,8 @@
 # Arch install steps
-## Quicker setup
-Use archinstall command to bootstrap the system
+### Tips 
+- **Quicker setup** : Use archinstall command to bootstrap the system
+- **Useful tools** : dpaste.com, allows copy paste to remote terminal based environments from host
+
 ## System setup
 
 ### Pacman
