@@ -209,3 +209,11 @@ dkms install -m broadcom-wl -v $VER -k $(uname -k) --force
 Confirm with ```pacman -Q broadcom-wl-dkms```
 
 Reboot and check ```ip link```
+
+## KVM Setup
+
+Check system capabilities
+```
+lscpu | grep -i virtualization
+```
+
